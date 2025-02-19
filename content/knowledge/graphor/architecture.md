@@ -1,5 +1,5 @@
 ---
 linkTitle: Architecture
-title: Nova Software Architecture
+title: Graphor Software Architecture
 weight: 10
 ---

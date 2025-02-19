@@ -10,17 +10,27 @@
 <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
-<title>Data Extraction for Implicit Graphs – PLRC</title>
-  <meta name="description" content="" /><link rel="canonical" href="http://localhost:1313/knowledge/graphor/" itemprop="url" />
+<title>Dataset Generation Over Implicit Graphs – PLRC</title>
+  <meta name="description" content="Graphor is a set of software containing interfaces for representing implicit graphs through specific functional forms and utilities for computing features associated with their vertices for its downstream analysis.
+Concretely, graphor is a Rust library crate which implements a plugin system where actual implementations of implicit graphs can be dynamically linked. So, the Graphor project also maintains packages with graphor pre-baked into them that conveniently expose graphor in useful ways.
+Primitives There are two objects in primary focus." /><link rel="canonical" href="http://localhost:1313/knowledge/graphor/" itemprop="url" />
 
-<meta property="og:title" content="Data Extraction for Implicit Graphs" />
+<meta property="og:title" content="Dataset Generation Over Implicit Graphs" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://localhost:1313/knowledge/graphor/" />
 
-  <meta itemprop="name" content="Data Extraction for Implicit Graphs">
+  <meta itemprop="name" content="Dataset Generation Over Implicit Graphs">
+  <meta itemprop="description" content="Graphor is a set of software containing interfaces for representing implicit graphs through specific functional forms and utilities for computing features associated with their vertices for its downstream analysis.
+Concretely, graphor is a Rust library crate which implements a plugin system where actual implementations of implicit graphs can be dynamically linked. So, the Graphor project also maintains packages with graphor pre-baked into them that conveniently expose graphor in useful ways.
+Primitives There are two objects in primary focus.">
+  <meta itemprop="dateModified" content="2025-02-18T21:15:38-08:00">
+  <meta itemprop="wordCount" content="790">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Data Extraction for Implicit Graphs">
+  <meta name="twitter:title" content="Dataset Generation Over Implicit Graphs">
+  <meta name="twitter:description" content="Graphor is a set of software containing interfaces for representing implicit graphs through specific functional forms and utilities for computing features associated with their vertices for its downstream analysis.
+Concretely, graphor is a Rust library crate which implements a plugin system where actual implementations of implicit graphs can be dynamically linked. So, the Graphor project also maintains packages with graphor pre-baked into them that conveniently expose graphor in useful ways.
+Primitives There are two objects in primary focus.">
 
     <link href="/css/compiled/main.css" rel="stylesheet" />
 
@@ -151,6 +161,13 @@
     <ul class="hx-flex hx-flex-col hx-gap-1 md:hx-hidden">
       
       
+          <li class=""><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/about/"
+    
+  >About
+    </a></li>
           <li class="open"><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
@@ -175,6 +192,20 @@
   >Graphor
         <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg></span>
     </a>
+  
+    <ul class='hx-flex hx-flex-col hx-gap-1 hx-relative before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] dark:before:hx-bg-neutral-800 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-pr-3 rtl:before:hx-right-0 ltr:hx-ml-3 rtl:hx-mr-3'><li>
+              <a
+                href="#primitives"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >Primitives</a>
+            </li>
+          <li>
+              <a
+                href="#stories"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >Stories</a>
+            </li>
+          </ul>
   
               <div class="ltr:hx-pr-0 hx-overflow-hidden">
         <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
@@ -235,6 +266,13 @@
       </div>
             </li></ul>
       </div></li>
+          <li class=""><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/people/"
+    
+  >People
+    </a></li>
           <li class=""><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
@@ -355,8 +393,16 @@
 </div></div></aside>
     
 <nav class="hextra-toc hx-order-last hx-hidden hx-w-64 hx-shrink-0 xl:hx-block print:hx-hidden hx-px-4" aria-label="table of contents">
-    <div class="hextra-scrollbar hx-sticky hx-top-16 hx-overflow-y-auto hx-pr-4 hx-pt-6 hx-text-sm [hyphens:auto] hx-max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] ltr:hx--mr-4 rtl:hx--ml-4">
-      <div class=" hx-sticky hx-bottom-0 hx-flex hx-flex-col hx-items-start hx-gap-2 hx-pb-8 dark:hx-border-neutral-800 contrast-more:hx-border-t contrast-more:hx-border-neutral-400 contrast-more:hx-shadow-none contrast-more:dark:hx-border-neutral-400"><a class="hx-text-xs hx-font-medium hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-100 contrast-more:hx-text-gray-800 contrast-more:dark:hx-text-gray-50" href="https://github.com/PLRCollective/plrcollective.github.io/tree/main/content/knowledge/graphor/_index.md" target="_blank" rel="noreferrer">Edit this page on GitHub →</a>
+    <div class="hextra-scrollbar hx-sticky hx-top-16 hx-overflow-y-auto hx-pr-4 hx-pt-6 hx-text-sm [hyphens:auto] hx-max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] ltr:hx--mr-4 rtl:hx--ml-4"><p class="hx-mb-4 hx-font-semibold hx-tracking-tight">On this page</p><ul>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#primitives">Primitives
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#stories">Stories
+        </a>
+      </li></ul>
+      <div class="hx-mt-8 hx-border-t hx-bg-white hx-pt-8 hx-shadow-[0_-12px_16px_white] dark:hx-bg-dark dark:hx-shadow-[0_-12px_16px_#111] hx-sticky hx-bottom-0 hx-flex hx-flex-col hx-items-start hx-gap-2 hx-pb-8 dark:hx-border-neutral-800 contrast-more:hx-border-t contrast-more:hx-border-neutral-400 contrast-more:hx-shadow-none contrast-more:dark:hx-border-neutral-400"><a class="hx-text-xs hx-font-medium hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-100 contrast-more:hx-text-gray-800 contrast-more:dark:hx-text-gray-50" href="https://github.com/PLRCollective/plrcollective.github.io/tree/main/content/knowledge/graphor/_index.md" target="_blank" rel="noreferrer">Edit this page on GitHub →</a>
         <button aria-hidden="true" id="backToTop" onClick="scrollUp();" class="hx-transition-all hx-duration-75 hx-opacity-0 hx-text-xs hx-font-medium hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-100 contrast-more:hx-text-gray-800 contrast-more:dark:hx-text-gray-50">
           <span>Scroll to top</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hx-inline ltr:hx-ml-1 rtl:hx-mr-1 hx-h-3.5 hx-w-3.5 hx-border hx-rounded-full hx-border-gray-500 hover:hx-border-gray-900 dark:hx-border-gray-400 dark:hover:hx-border-gray-100 contrast-more:hx-border-gray-800 contrast-more:dark:hx-border-gray-50">
@@ -378,10 +424,96 @@
   </div>
 
         <div class="content">
-          <h1>Data Extraction for Implicit Graphs</h1>
-          
+          <h1>Dataset Generation Over Implicit Graphs</h1>
+          <p>Graphor is a set of software containing interfaces for representing <a href="https://en.wikipedia.org/wiki/Implicit_graph" target="_blank" rel="noopener">implicit graphs</a> through specific functional forms and utilities for computing features associated with their vertices for its downstream analysis.</p>
+<p>Concretely, <code>graphor</code> is a <a href="https://www.rust-lang.org/" target="_blank" rel="noopener">Rust</a> <a href="https://doc.rust-lang.org/book/ch07-01-packages-and-crates.html" target="_blank" rel="noopener">library crate</a> which implements a plugin system where actual implementations of implicit graphs can be dynamically linked. So, the Graphor <em>project</em> also maintains packages with <code>graphor</code> <em>pre-baked</em> into them that conveniently expose <code>graphor</code> in useful ways.</p>
+<h2>Primitives<span class="hx-absolute -hx-mt-20" id="primitives"></span>
+    <a href="#primitives" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>There are two objects in primary focus.</p>
+<ul>
+<li><strong>Implicit Graphs (IGs)</strong>. Graph representations in terms of an initial vertex $v \in V$ and a <em>transition</em> function $t : V \to \mathcal{P}(V)$.</li>
+<li><strong>Abstractions</strong>: Adjacency-preserving <a href="https://en.wikipedia.org/wiki/Morphism" target="_blank" rel="noopener">Morphisms</a> (functions) of the form $a : V \to V&rsquo;$, from vertices in a <a href="https://en.wikipedia.org/wiki/Covering_graph" target="_blank" rel="noopener">lift</a> $G = (V, E)$ to a possible correspondant $G&rsquo; = (V&rsquo;, E&rsquo;)$.</li>
+</ul>
+<div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
+  <div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2"><div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️</div></div>
+
+  <div class="hx-w-full hx-min-w-0 hx-leading-7">
+    <div class="hx-mt-6 hx-leading-7 first:hx-mt-0">This is a lot; see <a href="https://www.maxfierro.me/representation-concepts-in-game-theoretic-systems/" target="_blank" rel="noopener">this article</a> for a contextualized explanation.</div>
+  </div>
+</div>
+
+<p>Every other library item in <code>graphor</code> is dedicated to efficiently and exhaustively traversing IGs, producing artifacts as a function of (possibly abstracted) graph vertices, and storing them for later analysis.</p>
+<p>As such, the library is split into 1) traits that represent IGs and abstractions and 2) utilities that consume these definitions in useful ways, supporting different algorithmic procedures. In accordance to the role of Graphor in PLRC&rsquo;s project strategy, these are mainly dynamic programming algorithms.</p>
+<h2>Stories<span class="hx-absolute -hx-mt-20" id="stories"></span>
+    <a href="#stories" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>The <code>graphor</code> library crate can be useful in many ways. We will explain this through three different user stories of a fictional Joe User.</p>
+<div class="hextra-scrollbar hx-overflow-x-auto hx-overflow-y-hidden hx-overscroll-x-contain">
+  <div class="hx-mt-4 hx-flex hx-w-max hx-min-w-full hx-border-b hx-border-gray-200 hx-pb-px dark:hx-border-neutral-800"><button
+        class="hextra-tabs-toggle data-[state=selected]:hx-border-primary-500 data-[state=selected]:hx-text-primary-600 data-[state=selected]:dark:hx-border-primary-500 data-[state=selected]:dark:hx-text-primary-600 hx-mr-2 hx-rounded-t hx-p-2 hx-font-medium hx-leading-5 hx-transition-colors -hx-mb-0.5 hx-select-none hx-border-b-2 hx-border-transparent hx-text-gray-600 hover:hx-border-gray-200 hover:hx-text-black dark:hx-text-gray-200 dark:hover:hx-border-neutral-800 dark:hover:hx-text-white"
+        role="tab"
+        type="button"
+        aria-controls="tabs-panel-0" aria-selected="true"  tabindex="0"  data-state="selected">Plugin Author</button><button
+        class="hextra-tabs-toggle data-[state=selected]:hx-border-primary-500 data-[state=selected]:hx-text-primary-600 data-[state=selected]:dark:hx-border-primary-500 data-[state=selected]:dark:hx-text-primary-600 hx-mr-2 hx-rounded-t hx-p-2 hx-font-medium hx-leading-5 hx-transition-colors -hx-mb-0.5 hx-select-none hx-border-b-2 hx-border-transparent hx-text-gray-600 hover:hx-border-gray-200 hover:hx-text-black dark:hx-text-gray-200 dark:hover:hx-border-neutral-800 dark:hover:hx-text-white"
+        role="tab"
+        type="button"
+        aria-controls="tabs-panel-1">Library Author</button><button
+        class="hextra-tabs-toggle data-[state=selected]:hx-border-primary-500 data-[state=selected]:hx-text-primary-600 data-[state=selected]:dark:hx-border-primary-500 data-[state=selected]:dark:hx-text-primary-600 hx-mr-2 hx-rounded-t hx-p-2 hx-font-medium hx-leading-5 hx-transition-colors -hx-mb-0.5 hx-select-none hx-border-b-2 hx-border-transparent hx-text-gray-600 hover:hx-border-gray-200 hover:hx-text-black dark:hx-text-gray-200 dark:hover:hx-border-neutral-800 dark:hover:hx-text-white"
+        role="tab"
+        type="button"
+        aria-controls="tabs-panel-2">Binary Author</button></div>
+</div>
+<div>
+  <div
+  class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
+  id="tabs-panel-0"
+  role="tabpanel" tabindex="0"  data-state="selected" ><div class="steps hx-ml-4 hx-mb-12 ltr:hx-border-l rtl:hx-border-r hx-border-gray-200 ltr:hx-pl-6 rtl:hx-pr-6 dark:hx-border-neutral-800 [counter-reset:step]"><h3>Situation<span class="hx-absolute -hx-mt-20" id="situation"></span>
+  <a href="#situation" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Joe is a mathematician making a rewrite system to see how many theorems he can prove by brute-forcing formal rewrites.</p>
+<h3>Problem<span class="hx-absolute -hx-mt-20" id="problem"></span>
+  <a href="#problem" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Joe&rsquo;s project only involves one formal system with well-defined rewrite rules. He can write code, but does not have the technical know-how to manage the amount of permutations that his system will explore during exploration.</p>
+<h3>Solution<span class="hx-absolute -hx-mt-20" id="solution"></span>
+  <a href="#solution" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Joe finds the Graphor project, and notices that it already has an implementation of a shortest-paths algorithm. His solution is to write a <code>graphor</code> plugin representing his formal rewrite system.</p>
+<h3>Implementation<span class="hx-absolute -hx-mt-20" id="implementation"></span>
+  <a href="#implementation" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Joe writes Rust code implementing the right interfaces for his rewrite system. He then compiles his code as a dynamic library, allowing it to be used as a plugin.</p>
+<h3>Usage<span class="hx-absolute -hx-mt-20" id="usage"></span>
+  <a href="#usage" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Joe then uses the <code>graphor-cli</code> binary crate of the Graphor project to register his plugin and run the shortest-paths algorithm on a few different input theorems.</p>
+<p>Joe could have also used the <code>graphor</code> Python package to do the same through a Python script (and have programatic access to artifacts generated in the process).</p>
+</div>
+</div>
+  <div
+  class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
+  id="tabs-panel-1"
+  role="tabpanel"><div class="steps hx-ml-4 hx-mb-12 ltr:hx-border-l rtl:hx-border-r hx-border-gray-200 ltr:hx-pl-6 rtl:hx-pr-6 dark:hx-border-neutral-800 [counter-reset:step]"><h3>Situation<span class="hx-absolute -hx-mt-20" id="situation"></span>
+  <a href="#situation" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Joe is a computer scientist implementing a toolchain for <a href="https://en.wikipedia.org/wiki/Formal_grammar" target="_blank" rel="noopener">formal grammar</a> checkers (programs that check whether or not a string belongs to a formal language) that work via <a href="https://en.wikipedia.org/wiki/Recursive_descent_parser" target="_blank" rel="noopener">recursive descent</a>.</p>
+<h3>Problem<span class="hx-absolute -hx-mt-20" id="problem"></span>
+  <a href="#problem" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Recursive descent can be very expensive, and Joe does not want to spend too much time making optimizations.</p>
+<h3>Solution<span class="hx-absolute -hx-mt-20" id="solution"></span>
+  <a href="#solution" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Joe finds the Graphor project, and notices that it already has an implementation of a vertex-inclusion graph algorithm. His solution is to simply write a wrapper around the <code>graphor</code> library crate under the semantics of different types of formal grammars.</p>
+<h3>Implementation<span class="hx-absolute -hx-mt-20" id="implementation"></span>
+  <a href="#implementation" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Joe writes Rust wrapper traits (interfaces) that, once implemented, automatically give users&rsquo; items access to <code>graphor</code> traits. He does this via <a href="https://doc.rust-lang.org/reference/glossary.html#blanket-implementation" target="_blank" rel="noopener">blanket implementations</a>.</p>
+<h3>Usage<span class="hx-absolute -hx-mt-20" id="usage"></span>
+  <a href="#usage" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Joe then publishes his toolchain as a Rust library crate. This allows others to write Rust code that implements Joe&rsquo;s interface definitions, compile their code as a plugin, and use it through any <code>graphor</code> frontend (such as the <code>graphor-cli</code> binary crate).</p>
+<p>Joe could even write a wrapper (or extension) around the <code>graphor</code> CLI utility (which <code>graphor-cli</code> calls directly), and publish his own appropriately-themed binary with a dedicated UI. (Or write an entire user interface from scratch.)</p>
+</div>
+</div>
+  <div
+  class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
+  id="tabs-panel-2"
+  role="tabpanel"><div class="steps hx-ml-4 hx-mb-12 ltr:hx-border-l rtl:hx-border-r hx-border-gray-200 ltr:hx-pl-6 rtl:hx-pr-6 dark:hx-border-neutral-800 [counter-reset:step]"><h3>Situation<span class="hx-absolute -hx-mt-20" id="situation"></span>
+  <a href="#situation" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Joe is a classical AI afficionado who likes to <a href="https://en.wikipedia.org/wiki/Solved_game" target="_blank" rel="noopener">solve</a> small games and publish his results.</p>
+<h3>Problem<span class="hx-absolute -hx-mt-20" id="problem"></span>
+  <a href="#problem" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Joe would like to spend his time working on implementing game rules, not on building infrastructure.</p>
+<h3>Solution<span class="hx-absolute -hx-mt-20" id="solution"></span>
+  <a href="#solution" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Through the Graphor project, Joe observes that he can represent many games he is interested in as IGs and apply well-known algorithms to solve them.</p>
+<h3>Implementation<span class="hx-absolute -hx-mt-20" id="implementation"></span>
+  <a href="#implementation" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Joe implements <code>graphor</code>&rsquo;s interfaces for a lot of games, then self-registers them in a binary program (without compiling dynamic libraries). His program includes a user interface that allows him to interact with is implementations.</p>
+<h3>Usage<span class="hx-absolute -hx-mt-20" id="usage"></span>
+  <a href="#usage" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Joe publishes his binary as a standalone program which comes pre-loaded with a lot of games, and accepts user commands that allow it to generate solutions to the games he coded.</p>
+<p>When he has the time, Joe will make it so that, in addition to being able to solve all of the pre-loaded games in the binary, users will be able to write <code>graphor</code> plugins that his binary can register and also solve. This will be possible with minimal effort due to <code>graphor</code>&rsquo;s architecture.</p>
+</div>
+</div>
+</div>
+
         </div>
-        <div class="hx-mt-16"></div>
+        
+    <div class="hx-mt-12 hx-mb-8 hx-block hx-text-xs hx-text-gray-500 ltr:hx-text-right rtl:hx-text-left dark:hx-text-gray-400">Last updated on <time datetime="2025-02-18T21:15:38.000Z">February 18, 2025</time></div>
         
         
       </main>
@@ -393,6 +525,30 @@
 
 <script defer src="/lib/flexsearch/flexsearch.bundle.min.0425860527cc9968f9f049421c7a56b39327d475e2e3a8f550416be3a9134327.js" integrity="sha256-BCWGBSfMmWj58ElCHHpWs5Mn1HXi46j1UEFr46kTQyc="></script>
     <script defer src="/en.search.js" integrity=""></script>
+<link type="text/css" rel="stylesheet" href="/lib/katex/katex.min.7e5db7914b97e596a36c1abb67ccc7f174f8bb71d38c9a88c55b262ed1737f97.css" integrity="sha256-fl23kUuX5ZajbBq7Z8zH8XT4u3HTjJqIxVsmLtFzf5c=" />
+  <script defer src="/lib/katex/katex.min.9f45307c5794ed247a0d095f3a62e52ef2215a67b2327203a7fd919959ae79d1.js" integrity="sha256-n0UwfFeU7SR6DQlfOmLlLvIhWmeyMnIDp/2RmVmuedE="></script>
+  <script defer src="/lib/katex/auto-render.min.7b57d427ac6270677daf8d8380ded2cc73336f9149a167b8e1fe0d6ef66604ae.js" integrity="sha256-e1fUJ6xicGd9r42DgN7SzHMzb5FJoWe44f4NbvZmBK4="></script>
+  <script defer src="/lib/katex/mhchem.min.f0ca03df194b8c3d6017ff455db6a0ef98857905663fa311a6cded788b15340b.js" integrity="sha256-8MoD3xlLjD1gF/9FXbag75iFeQVmP6MRps3teIsVNAs="></script>
+  <script>
+    
+    
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false },
+          { left: "\\(", right: "\\)", display: false },
+          { left: "\\begin{equation}", right: "\\end{equation}", display: true },
+          {left: "\\begin{align}", right: "\\end{align}", display: true},
+          {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
+          {left: "\\begin{gather}", right: "\\end{gather}", display: true},
+          {left: "\\begin{CD}", right: "\\end{CD}", display: true},
+          { left: "\\[", right: "\\]", display: true },
+        ],
+        throwOnError: false,
+      });
+    });
+  </script>
 
 
   </body>
