@@ -1,0 +1,26 @@
+<svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+  <!-- Grid -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="lightgrey" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <rect x="0" y="0" width="240" height="240" fill="url(#grid)" stroke="lightgrey" stroke-width="2"/>
+
+  <!-- Edges (scaled-up tree) -->
+  <line x1="120" y1="30" x2="60" y2="110" stroke="black" stroke-width="4"/>
+  <line x1="120" y1="30" x2="180" y2="110" stroke="black" stroke-width="4"/>
+  <line x1="60" y1="110" x2="30" y2="190" stroke="black" stroke-width="4"/>
+  <line x1="60" y1="110" x2="90" y2="190" stroke="black" stroke-width="4"/>
+  <line x1="180" y1="110" x2="150" y2="190" stroke="black" stroke-width="4"/>
+  <line x1="180" y1="110" x2="210" y2="190" stroke="black" stroke-width="4"/>
+
+  <!-- Nodes -->
+  <circle cx="120" cy="30" r="7" fill="black"/>
+  <circle cx="60" cy="110" r="7" fill="black"/>
+  <circle cx="180" cy="110" r="7" fill="black"/>
+  <circle cx="30" cy="190" r="7" fill="black"/>
+  <circle cx="90" cy="190" r="7" fill="black"/>
+  <circle cx="150" cy="190" r="7" fill="black"/>
+  <circle cx="210" cy="190" r="7" fill="black"/>
+</svg>
