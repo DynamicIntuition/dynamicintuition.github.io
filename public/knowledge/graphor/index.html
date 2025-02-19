@@ -11,9 +11,8 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>Dataset Generation Over Implicit Graphs – PLRC</title>
-  <meta name="description" content="Graphor is a set of software containing interfaces for representing implicit graphs through specific functional forms and utilities for computing features associated with their vertices for its downstream analysis.
-Concretely, graphor is a Rust library crate which implements a plugin system where actual implementations of implicit graphs can be dynamically linked. So, the Graphor project also maintains packages with graphor pre-baked into them that conveniently expose graphor in useful ways.
-Primitives There are two objects in primary focus." /><link rel="canonical" href="http://localhost:1313/knowledge/graphor/" itemprop="url" />
+  <meta name="description" content="Graphor is a set of software containing interfaces for representing implicit graphs through specific functional forms and utilities for computing features associated with their vertices for their downstream analysis as datasets.
+Concretely, graphor is a Rust library crate which implements a plugin system where actual implementations of implicit graphs can be dynamically linked. So, the Graphor project also maintains packages with graphor pre-baked into them that conveniently expose it in extensible ways (without re-compilation)." /><link rel="canonical" href="http://localhost:1313/knowledge/graphor/" itemprop="url" />
 
 <meta property="og:title" content="Dataset Generation Over Implicit Graphs" />
 <meta property="og:description" content="" />
@@ -21,16 +20,14 @@ Primitives There are two objects in primary focus." /><link rel="canonical" href
 <meta property="og:url" content="http://localhost:1313/knowledge/graphor/" />
 
   <meta itemprop="name" content="Dataset Generation Over Implicit Graphs">
-  <meta itemprop="description" content="Graphor is a set of software containing interfaces for representing implicit graphs through specific functional forms and utilities for computing features associated with their vertices for its downstream analysis.
-Concretely, graphor is a Rust library crate which implements a plugin system where actual implementations of implicit graphs can be dynamically linked. So, the Graphor project also maintains packages with graphor pre-baked into them that conveniently expose graphor in useful ways.
-Primitives There are two objects in primary focus.">
+  <meta itemprop="description" content="Graphor is a set of software containing interfaces for representing implicit graphs through specific functional forms and utilities for computing features associated with their vertices for their downstream analysis as datasets.
+Concretely, graphor is a Rust library crate which implements a plugin system where actual implementations of implicit graphs can be dynamically linked. So, the Graphor project also maintains packages with graphor pre-baked into them that conveniently expose it in extensible ways (without re-compilation).">
   <meta itemprop="dateModified" content="2025-02-18T21:15:38-08:00">
-  <meta itemprop="wordCount" content="790">
+  <meta itemprop="wordCount" content="857">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Dataset Generation Over Implicit Graphs">
-  <meta name="twitter:description" content="Graphor is a set of software containing interfaces for representing implicit graphs through specific functional forms and utilities for computing features associated with their vertices for its downstream analysis.
-Concretely, graphor is a Rust library crate which implements a plugin system where actual implementations of implicit graphs can be dynamically linked. So, the Graphor project also maintains packages with graphor pre-baked into them that conveniently expose graphor in useful ways.
-Primitives There are two objects in primary focus.">
+  <meta name="twitter:description" content="Graphor is a set of software containing interfaces for representing implicit graphs through specific functional forms and utilities for computing features associated with their vertices for their downstream analysis as datasets.
+Concretely, graphor is a Rust library crate which implements a plugin system where actual implementations of implicit graphs can be dynamically linked. So, the Graphor project also maintains packages with graphor pre-baked into them that conveniently expose it in extensible ways (without re-compilation).">
 
     <link href="/css/compiled/main.css" rel="stylesheet" />
 
@@ -201,6 +198,12 @@ Primitives There are two objects in primary focus.">
             </li>
           <li>
               <a
+                href="#plugins"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >Plugins</a>
+            </li>
+          <li>
+              <a
                 href="#stories"
                 class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
               >Stories</a>
@@ -211,14 +214,14 @@ Primitives There are two objects in primary focus.">
         <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/knowledge/graphor/architecture/"
+    href="/knowledge/graphor/organization/"
     
-  >Architecture
+  >Organization
     </a>
               
             </li></ul>
       </div>
-            </li><li class="hx-flex hx-flex-col open"><a
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/knowledge/nova/"
@@ -238,16 +241,16 @@ Primitives There are two objects in primary focus.">
             </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/knowledge/nova/implementations/"
+    href="/knowledge/nova/games/"
     
-  >Implementations
+  >Games
         <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg></span>
     </a>
               <div class="ltr:hx-pr-0 hx-overflow-hidden">
         <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/knowledge/nova/implementations/zero-by/"
+    href="/knowledge/nova/games/zero-by/"
     
   >Zero By
     </a>
@@ -255,7 +258,7 @@ Primitives There are two objects in primary focus.">
             </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/knowledge/nova/implementations/crossteaser/"
+    href="/knowledge/nova/games/crossteaser/"
     
   >Crossteaser
     </a>
@@ -313,14 +316,14 @@ Primitives There are two objects in primary focus.">
         <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/knowledge/graphor/architecture/"
+    href="/knowledge/graphor/organization/"
     
-  >Architecture
+  >Organization
     </a>
               
             </li></ul>
       </div></li>
-          <li class="open"><a
+          <li class=""><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/knowledge/nova/"
@@ -339,16 +342,16 @@ Primitives There are two objects in primary focus.">
             </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/knowledge/nova/implementations/"
+    href="/knowledge/nova/games/"
     
-  >Implementations
+  >Games
         <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg></span>
     </a>
               <div class="ltr:hx-pr-0 hx-overflow-hidden">
         <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/knowledge/nova/implementations/zero-by/"
+    href="/knowledge/nova/games/zero-by/"
     
   >Zero By
     </a>
@@ -356,7 +359,7 @@ Primitives There are two objects in primary focus.">
             </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/knowledge/nova/implementations/crossteaser/"
+    href="/knowledge/nova/games/crossteaser/"
     
   >Crossteaser
     </a>
@@ -399,6 +402,10 @@ Primitives There are two objects in primary focus.">
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#plugins">Plugins
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
         <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#stories">Stories
         </a>
       </li></ul>
@@ -425,24 +432,25 @@ Primitives There are two objects in primary focus.">
 
         <div class="content">
           <h1>Dataset Generation Over Implicit Graphs</h1>
-          <p>Graphor is a set of software containing interfaces for representing <a href="https://en.wikipedia.org/wiki/Implicit_graph" target="_blank" rel="noopener">implicit graphs</a> through specific functional forms and utilities for computing features associated with their vertices for its downstream analysis.</p>
-<p>Concretely, <code>graphor</code> is a <a href="https://www.rust-lang.org/" target="_blank" rel="noopener">Rust</a> <a href="https://doc.rust-lang.org/book/ch07-01-packages-and-crates.html" target="_blank" rel="noopener">library crate</a> which implements a plugin system where actual implementations of implicit graphs can be dynamically linked. So, the Graphor <em>project</em> also maintains packages with <code>graphor</code> <em>pre-baked</em> into them that conveniently expose <code>graphor</code> in useful ways.</p>
+          <p>Graphor is a set of software containing interfaces for representing <a href="https://en.wikipedia.org/wiki/Implicit_graph" target="_blank" rel="noopener">implicit graphs</a> through specific functional forms and utilities for computing features associated with their vertices for their downstream analysis as datasets.</p>
+<p>Concretely, <code>graphor</code> is a <a href="https://www.rust-lang.org/" target="_blank" rel="noopener">Rust</a> <a href="https://doc.rust-lang.org/book/ch07-01-packages-and-crates.html" target="_blank" rel="noopener">library crate</a> which implements a plugin system where actual implementations of implicit graphs can be dynamically linked. So, the Graphor <em>project</em> also maintains packages with <code>graphor</code> <em>pre-baked</em> into them that conveniently expose it in extensible ways (without re-compilation).</p>
 <h2>Primitives<span class="hx-absolute -hx-mt-20" id="primitives"></span>
     <a href="#primitives" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>There are two objects in primary focus.</p>
 <ul>
-<li><strong>Implicit Graphs (IGs)</strong>. Graph representations in terms of an initial vertex $v \in V$ and a <em>transition</em> function $t : V \to \mathcal{P}(V)$.</li>
+<li><strong>Implicit graphs (IGs)</strong>. Graph representations in terms of an initial vertex $v \in V$ and a <em>transition</em> function $t : V \to \mathcal{P}(V)$.</li>
 <li><strong>Abstractions</strong>: Adjacency-preserving <a href="https://en.wikipedia.org/wiki/Morphism" target="_blank" rel="noopener">Morphisms</a> (functions) of the form $a : V \to V&rsquo;$, from vertices in a <a href="https://en.wikipedia.org/wiki/Covering_graph" target="_blank" rel="noopener">lift</a> $G = (V, E)$ to a possible correspondant $G&rsquo; = (V&rsquo;, E&rsquo;)$.</li>
 </ul>
-<div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
-  <div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2"><div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️</div></div>
+<div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-flex-col hx-rounded-lg hx-border hx-py-4 hx-px-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
+  <p class="hx-flex hx-items-center hx-font-medium"><svg height=16px class="hx-inline-block hx-align-middle hx-mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Note</p>
 
   <div class="hx-w-full hx-min-w-0 hx-leading-7">
-    <div class="hx-mt-6 hx-leading-7 first:hx-mt-0">This is a lot; see <a href="https://www.maxfierro.me/representation-concepts-in-game-theoretic-systems/" target="_blank" rel="noopener">this article</a> for a contextualized explanation.</div>
+    <div class="hx-mt-6 hx-leading-7 first:hx-mt-0"><p>This might seem unmotivated. Please see <a href="https://www.maxfierro.me/representation-concepts-in-game-theoretic-systems/" target="_blank" rel="noopener">this article</a> for a contextualized explanation.</p></div>
   </div>
 </div>
-
-<p>Every other library item in <code>graphor</code> is dedicated to efficiently and exhaustively traversing IGs, producing artifacts as a function of (possibly abstracted) graph vertices, and storing them for later analysis.</p>
-<p>As such, the library is split into 1) traits that represent IGs and abstractions and 2) utilities that consume these definitions in useful ways, supporting different algorithmic procedures. In accordance to the role of Graphor in PLRC&rsquo;s project strategy, these are mainly dynamic programming algorithms.</p>
+<h2>Plugins<span class="hx-absolute -hx-mt-20" id="plugins"></span>
+    <a href="#plugins" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>A plugin is a collection of abstractions together with an IG. Each abstraction produces one or many named features. <strong>Put simply, the objective of any <code>graphor</code> product is to allow users to pick among a menu of available features on a per-plugin (and therefore per-IG) basis, and then have <code>graphor</code> internals construct a dataset automatically.</strong></p>
+<p>To aid the process of writing useful abstractions for domain-specific plugins (such as the game-theoretic ones we are concerned with), different interfaces, algorithms, and utilities are included in the library behind compiler flags (so you only get them if you need them).</p>
+<p>From a project management standpoint, <code>graphor</code> as a project avoids the growth associated with more IGs through the plugin system (by offloading to dynamic libraries), but welcomes growth from plugin <em>support</em> (through the addition of useful definitions and algorithms).</p>
 <h2>Stories<span class="hx-absolute -hx-mt-20" id="stories"></span>
     <a href="#stories" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>The <code>graphor</code> library crate can be useful in many ways. We will explain this through three different user stories of a fictional Joe User.</p>
 <div class="hextra-scrollbar hx-overflow-x-auto hx-overflow-y-hidden hx-overscroll-x-contain">

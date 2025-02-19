@@ -17,7 +17,7 @@ layout: hextra-home
 
 <div class="hx-mb-12">
 {{< hextra/hero-subtitle >}}
-  Grounding game-theoretic strategic performance in the&nbsp;<br class="sm:hx-block hx-hidden" />comfort of human intuition.
+  Landing game-theoretic strategic performance in the&nbsp;<br class="sm:hx-block hx-hidden" />comfort of human intuition.
 {{< /hextra/hero-subtitle >}}
 </div>
 

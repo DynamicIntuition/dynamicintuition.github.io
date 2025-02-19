@@ -15,15 +15,65 @@
     
     
     <item>
-      <title>Graphor Software Architecture</title>
-      <link>http://localhost:1313/knowledge/graphor/architecture/</link>
+      <title>Graphor Software Organization</title>
+      <link>http://localhost:1313/knowledge/graphor/organization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/knowledge/graphor/architecture/</guid>
+      <guid>http://localhost:1313/knowledge/graphor/organization/</guid>
       <description>
         
         
-        
+        &lt;p&gt;Here we focus on the organization of the Graphor platform across different libraries, binaries, and modules. This is intended as an introduction to the project, not as a reference.&lt;/p&gt;
+&lt;h2&gt;Module Diagram&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;module-diagram&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#module-diagram&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;pre class=&#34;mermaid hx-mt-6&#34;&gt;graph TD;
+  A[graphor repository]
+  B[graphor-traits]
+  C[graphor-algos]
+  D[graphor-cli]
+  E[graphor bin]
+  F[graphor lib]
+  G[graphor py]
+  H[plugin]
+  I[graphor-core]
+
+
+  E --&gt; |compiles| F
+  E --&gt; |calls| D
+  D --&gt; |calls| I
+  E --&gt; |ingests| H
+  H --&gt; |implements| B
+  H --&gt; |monomorphizes| C
+  H --&gt; |compiles| F
+  G --&gt; |exposes| I
+  C --&gt; |consumes| B
+  F --&gt; |includes| B
+  F --&gt; |includes| C
+  F --&gt; |includes| I
+  A --&gt; |contains| E
+  F --&gt; |optional| D
+  A --&gt; |contains| F
+  A --&gt; |contains| G
+  I --&gt; |reads / calls| H&lt;/pre&gt;&lt;h2&gt;Remarks&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;remarks&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#remarks&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Here we will attempt to justify and explain some design decisions in a Q&amp;amp;A format.&lt;/p&gt;
+&lt;h3&gt;What is ____?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;what-is-____&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#what-is-____&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Here is each component&amp;rsquo;s description.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;graphor repository.&lt;/strong&gt; The GitHub repository containing everything here.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;graphor lib.&lt;/strong&gt; &lt;code&gt;graphor&lt;/code&gt; itself. Contains all Rust code, some behind &lt;a href=&#34;https://rustc-dev-guide.rust-lang.org/feature-gates.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;feature gates&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;graphor-core.&lt;/strong&gt; Core plugin execution API in &lt;code&gt;gaphor&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;graphor-cli.&lt;/strong&gt; CLI implementation in &lt;code&gt;graphor&lt;/code&gt;; minimal frontend for core API.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;graphor py.&lt;/strong&gt; Python PyPi package containing bindings to the &lt;code&gt;graphor-core&lt;/code&gt; API.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;graphor bin.&lt;/strong&gt; Rust binary crate that allows registering and executing plugins.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;graphor-algos.&lt;/strong&gt; Algorithm implementations in &lt;code&gt;graphor&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;graphor-traits.&lt;/strong&gt; Trait declarations in &lt;code&gt;graphor&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;plugin.&lt;/strong&gt; An example plugin implementing &lt;code&gt;graphor&lt;/code&gt; traits.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Why dynamic libraries?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;why-dynamic-libraries&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#why-dynamic-libraries&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;In principle, the amount of existing plugins is unbounded, as well as the amount of people working on one at any given point. At least, it is somewhat independent of the amount of people working on &lt;code&gt;graphor&lt;/code&gt;. Dynamic libraries as a design decision permits independent authorship without the need for a central body of developers, who would otherwise be a development bottleneck.&lt;/p&gt;
+&lt;h3&gt;Where does data live?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;where-does-data-live&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#where-does-data-live&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;When a plugin is implemented, all of the generic code used in &lt;code&gt;graphor&lt;/code&gt; is specialized at the time of compilation. This includes the algorithms that perform graph traversals and the database code that stores the desired features associated with graph vertices.&lt;/p&gt;
+&lt;p&gt;So, when a plugin is &amp;rsquo;executed,&amp;rsquo; the core routines of &lt;code&gt;graphor&lt;/code&gt; figure out the minimum amount of algorithms that need to be executed to figure out the features requested by a user. Then they are executed, and the data they compute is stored by plugin code into a persistent database file which is later recovered and coalesced by &lt;code&gt;graphor&lt;/code&gt;.&lt;/p&gt;
+
       </description>
     </item>
     

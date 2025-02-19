@@ -7,24 +7,27 @@ sidebar:
   open: true
 ---
 
-Graphor is a set of software containing interfaces for representing [implicit graphs](https://en.wikipedia.org/wiki/Implicit_graph) through specific functional forms and utilities for computing features associated with their vertices for its downstream analysis.
+Graphor is a set of software containing interfaces for representing [implicit graphs](https://en.wikipedia.org/wiki/Implicit_graph) through specific functional forms and utilities for computing features associated with their vertices for their downstream analysis as datasets.
 
-Concretely, `graphor` is a [Rust](https://www.rust-lang.org/) [library crate](https://doc.rust-lang.org/book/ch07-01-packages-and-crates.html) which implements a plugin system where actual implementations of implicit graphs can be dynamically linked. So, the Graphor _project_ also maintains packages with `graphor` _pre-baked_ into them that conveniently expose `graphor` in useful ways.
+Concretely, `graphor` is a [Rust](https://www.rust-lang.org/) [library crate](https://doc.rust-lang.org/book/ch07-01-packages-and-crates.html) which implements a plugin system where actual implementations of implicit graphs can be dynamically linked. So, the Graphor _project_ also maintains packages with `graphor` _pre-baked_ into them that conveniently expose it in extensible ways (without re-compilation).
 
 ## Primitives
 
 There are two objects in primary focus.
 
-* **Implicit Graphs (IGs)**. Graph representations in terms of an initial vertex $v \in V$ and a _transition_ function $t : V \to \mathcal{P}(V)$.
+* **Implicit graphs (IGs)**. Graph representations in terms of an initial vertex $v \in V$ and a _transition_ function $t : V \to \mathcal{P}(V)$.
 * **Abstractions**: Adjacency-preserving [Morphisms](https://en.wikipedia.org/wiki/Morphism) (functions) of the form $a : V \to V'$, from vertices in a [lift](https://en.wikipedia.org/wiki/Covering_graph) $G = (V, E)$ to a possible correspondant $G' = (V', E')$.
 
-{{< callout type="info" >}}
-  This is a lot; see [this article](https://www.maxfierro.me/representation-concepts-in-game-theoretic-systems/) for a contextualized explanation.
-{{< /callout >}}
+> [!NOTE]
+> This might seem unmotivated. Please see [this article](https://www.maxfierro.me/representation-concepts-in-game-theoretic-systems/) for a contextualized explanation.
 
-Every other library item in `graphor` is dedicated to efficiently and exhaustively traversing IGs, producing artifacts as a function of (possibly abstracted) graph vertices, and storing them for later analysis.
+## Plugins
 
-As such, the library is split into 1) traits that represent IGs and abstractions and 2) utilities that consume these definitions in useful ways, supporting different algorithmic procedures. In accordance to the role of Graphor in PLRC's project strategy, these are mainly dynamic programming algorithms.
+A plugin is a collection of abstractions together with an IG. Each abstraction produces one or many named features. **Put simply, the objective of any `graphor` product is to allow users to pick among a menu of available features on a per-plugin (and therefore per-IG) basis, and then have `graphor` internals construct a dataset automatically.**
+
+To aid the process of writing useful abstractions for domain-specific plugins (such as the game-theoretic ones we are concerned with), different interfaces, algorithms, and utilities are included in the library behind compiler flags (so you only get them if you need them).
+
+From a project management standpoint, `graphor` as a project avoids the growth associated with more IGs through the plugin system (by offloading to dynamic libraries), but welcomes growth from plugin _support_ (through the addition of useful definitions and algorithms).
 
 ## Stories
 

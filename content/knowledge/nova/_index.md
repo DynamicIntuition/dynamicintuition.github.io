@@ -1,7 +1,10 @@
 ---
 linkTitle: Nova
-title: "Implementations of Games as Implicit Graphs"
+title: "Collection of Games as Implicit Graphs"
 weight: 15
 sidebar:
-  open: true
+  open: false
 ---
+
+> [!WARNING]
+> This page is under construction.

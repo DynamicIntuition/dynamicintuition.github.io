@@ -11,19 +11,56 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>Graphor Software Architecture – PLRC</title>
-  <meta name="description" content="" /><link rel="canonical" href="http://localhost:1313/knowledge/graphor/architecture/" itemprop="url" />
+  <meta name="description" content="Here we focus on how the packages and binaries of Graphor are organized.
+Design Diagram graph TD; A[graphor repository] B[graphor-traits] C[graphor-algos] D[graphor-cli] E[graphor bin] F[graphor lib] G[graphor py] H[plugin] I[graphor-core] E --&gt; |compiles| F E --&gt; |calls| D D --&gt; |calls| I E --&gt; |ingests| H H --&gt; |implements| B H --&gt; |monomorphizes| C H --&gt; |compiles| F G --&gt; |exposes| I C --&gt; |consumes| B F --&gt; |includes| B F --&gt; |includes| C F --&gt; |includes| I A --&gt; |contains| E F --&gt; |optional| D A --&gt; |contains| F A --&gt; |contains| G I --&gt; |reads / calls| HRemarks Here we will attempt to justify and explain some design decisions in a Q&amp;A format." /><link rel="canonical" href="http://localhost:1313/knowledge/graphor/architecture/" itemprop="url" />
 
 <meta property="og:title" content="Graphor Software Architecture" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="Here we focus on how the packages and binaries of Graphor are organized.
+Design Diagram
+    graph TD;
+  A[graphor repository]
+  B[graphor-traits]
+  C[graphor-algos]
+  D[graphor-cli]
+  E[graphor bin]
+  F[graphor lib]
+  G[graphor py]
+  H[plugin]
+  I[graphor-core]
+
+
+  E --&gt; |compiles| F
+  E --&gt; |calls| D
+  D --&gt; |calls| I
+  E --&gt; |ingests| H
+  H --&gt; |implements| B
+  H --&gt; |monomorphizes| C
+  H --&gt; |compiles| F
+  G --&gt; |exposes| I
+  C --&gt; |consumes| B
+  F --&gt; |includes| B
+  F --&gt; |includes| C
+  F --&gt; |includes| I
+  A --&gt; |contains| E
+  F --&gt; |optional| D
+  A --&gt; |contains| F
+  A --&gt; |contains| G
+  I --&gt; |reads / calls| HRemarks
+    Here we will attempt to justify and explain some design decisions in a Q&amp;A format." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/knowledge/graphor/architecture/" /><meta property="article:section" content="knowledge" />
 
 <meta property="article:modified_time" content="2025-02-18T21:15:38-08:00" />
 
   <meta itemprop="name" content="Graphor Software Architecture">
+  <meta itemprop="description" content="Here we focus on how the packages and binaries of Graphor are organized.
+Design Diagram graph TD; A[graphor repository] B[graphor-traits] C[graphor-algos] D[graphor-cli] E[graphor bin] F[graphor lib] G[graphor py] H[plugin] I[graphor-core] E --&gt; |compiles| F E --&gt; |calls| D D --&gt; |calls| I E --&gt; |ingests| H H --&gt; |implements| B H --&gt; |monomorphizes| C H --&gt; |compiles| F G --&gt; |exposes| I C --&gt; |consumes| B F --&gt; |includes| B F --&gt; |includes| C F --&gt; |includes| I A --&gt; |contains| E F --&gt; |optional| D A --&gt; |contains| F A --&gt; |contains| G I --&gt; |reads / calls| HRemarks Here we will attempt to justify and explain some design decisions in a Q&amp;A format.">
   <meta itemprop="dateModified" content="2025-02-18T21:15:38-08:00">
+  <meta itemprop="wordCount" content="368">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Graphor Software Architecture">
+  <meta name="twitter:description" content="Here we focus on how the packages and binaries of Graphor are organized.
+Design Diagram graph TD; A[graphor repository] B[graphor-traits] C[graphor-algos] D[graphor-cli] E[graphor bin] F[graphor lib] G[graphor py] H[plugin] I[graphor-core] E --&gt; |compiles| F E --&gt; |calls| D D --&gt; |calls| I E --&gt; |ingests| H H --&gt; |implements| B H --&gt; |monomorphizes| C H --&gt; |compiles| F G --&gt; |exposes| I C --&gt; |consumes| B F --&gt; |includes| B F --&gt; |includes| C F --&gt; |includes| I A --&gt; |contains| E F --&gt; |optional| D A --&gt; |contains| F A --&gt; |contains| G I --&gt; |reads / calls| HRemarks Here we will attempt to justify and explain some design decisions in a Q&amp;A format.">
 
     <link href="/css/compiled/main.css" rel="stylesheet" />
 
@@ -193,6 +230,20 @@
     
   >Architecture
     </a>
+  
+    <ul class='hx-flex hx-flex-col hx-gap-1 hx-relative before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] dark:before:hx-bg-neutral-800 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-pr-3 rtl:before:hx-right-0 ltr:hx-ml-3 rtl:hx-mr-3'><li>
+              <a
+                href="#design-diagram"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >Design Diagram</a>
+            </li>
+          <li>
+              <a
+                href="#remarks"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >Remarks</a>
+            </li>
+          </ul>
   
               
             </li></ul>
@@ -372,8 +423,28 @@
 </div></div></aside>
     
 <nav class="hextra-toc hx-order-last hx-hidden hx-w-64 hx-shrink-0 xl:hx-block print:hx-hidden hx-px-4" aria-label="table of contents">
-    <div class="hextra-scrollbar hx-sticky hx-top-16 hx-overflow-y-auto hx-pr-4 hx-pt-6 hx-text-sm [hyphens:auto] hx-max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] ltr:hx--mr-4 rtl:hx--ml-4">
-      <div class=" hx-sticky hx-bottom-0 hx-flex hx-flex-col hx-items-start hx-gap-2 hx-pb-8 dark:hx-border-neutral-800 contrast-more:hx-border-t contrast-more:hx-border-neutral-400 contrast-more:hx-shadow-none contrast-more:dark:hx-border-neutral-400"><a class="hx-text-xs hx-font-medium hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-100 contrast-more:hx-text-gray-800 contrast-more:dark:hx-text-gray-50" href="https://github.com/PLRCollective/plrcollective.github.io/tree/main/content/knowledge/graphor/architecture.md" target="_blank" rel="noreferrer">Edit this page on GitHub →</a>
+    <div class="hextra-scrollbar hx-sticky hx-top-16 hx-overflow-y-auto hx-pr-4 hx-pt-6 hx-text-sm [hyphens:auto] hx-max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] ltr:hx--mr-4 rtl:hx--ml-4"><p class="hx-mb-4 hx-font-semibold hx-tracking-tight">On this page</p><ul>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#design-diagram">Design Diagram
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#remarks">Remarks
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#what-is-____">What is ____?
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#why-dynamic-libraries">Why dynamic libraries?
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#where-does-data-live">Where does data live?
+        </a>
+      </li></ul>
+      <div class="hx-mt-8 hx-border-t hx-bg-white hx-pt-8 hx-shadow-[0_-12px_16px_white] dark:hx-bg-dark dark:hx-shadow-[0_-12px_16px_#111] hx-sticky hx-bottom-0 hx-flex hx-flex-col hx-items-start hx-gap-2 hx-pb-8 dark:hx-border-neutral-800 contrast-more:hx-border-t contrast-more:hx-border-neutral-400 contrast-more:hx-shadow-none contrast-more:dark:hx-border-neutral-400"><a class="hx-text-xs hx-font-medium hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-100 contrast-more:hx-text-gray-800 contrast-more:dark:hx-text-gray-50" href="https://github.com/PLRCollective/plrcollective.github.io/tree/main/content/knowledge/graphor/architecture.md" target="_blank" rel="noreferrer">Edit this page on GitHub →</a>
         <button aria-hidden="true" id="backToTop" onClick="scrollUp();" class="hx-transition-all hx-duration-75 hx-opacity-0 hx-text-xs hx-font-medium hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-100 contrast-more:hx-text-gray-800 contrast-more:dark:hx-text-gray-50">
           <span>Scroll to top</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hx-inline ltr:hx-ml-1 rtl:hx-mr-1 hx-h-3.5 hx-w-3.5 hx-border hx-rounded-full hx-border-gray-500 hover:hx-border-gray-900 dark:hx-border-gray-400 dark:hover:hx-border-gray-100 contrast-more:hx-border-gray-800 contrast-more:dark:hx-border-gray-50">
@@ -399,7 +470,57 @@
 
         <div class="content">
           <h1>Graphor Software Architecture</h1>
-          
+          <p>Here we focus on how the packages and binaries of Graphor are organized.</p>
+<h2>Design Diagram<span class="hx-absolute -hx-mt-20" id="design-diagram"></span>
+    <a href="#design-diagram" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><pre class="mermaid hx-mt-6">graph TD;
+  A[graphor repository]
+  B[graphor-traits]
+  C[graphor-algos]
+  D[graphor-cli]
+  E[graphor bin]
+  F[graphor lib]
+  G[graphor py]
+  H[plugin]
+  I[graphor-core]
+
+
+  E --> |compiles| F
+  E --> |calls| D
+  D --> |calls| I
+  E --> |ingests| H
+  H --> |implements| B
+  H --> |monomorphizes| C
+  H --> |compiles| F
+  G --> |exposes| I
+  C --> |consumes| B
+  F --> |includes| B
+  F --> |includes| C
+  F --> |includes| I
+  A --> |contains| E
+  F --> |optional| D
+  A --> |contains| F
+  A --> |contains| G
+  I --> |reads / calls| H</pre><h2>Remarks<span class="hx-absolute -hx-mt-20" id="remarks"></span>
+    <a href="#remarks" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>Here we will attempt to justify and explain some design decisions in a Q&amp;A format.</p>
+<h3>What is ____?<span class="hx-absolute -hx-mt-20" id="what-is-____"></span>
+    <a href="#what-is-____" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Here is each component&rsquo;s description.</p>
+<ul>
+<li><strong>graphor repository.</strong> The GitHub repository containing everything here.</li>
+<li><strong>graphor lib.</strong> <code>graphor</code> itself. Contains all Rust code, some behind <a href="https://rustc-dev-guide.rust-lang.org/feature-gates.html" target="_blank" rel="noopener">feature gates</a>.</li>
+<li><strong>graphor-core.</strong> Core plugin execution API in <code>gaphor</code>.</li>
+<li><strong>graphor-cli.</strong> CLI implementation in <code>graphor</code>; minimal frontend for core API.</li>
+<li><strong>graphor py.</strong> Python PyPi package containing bindings to the <code>graphor-core</code> API.</li>
+<li><strong>graphor bin.</strong> Rust binary crate that allows registering and executing plugins.</li>
+<li><strong>graphor-algos.</strong> Algorithm implementations in <code>graphor</code>.</li>
+<li><strong>graphor-traits.</strong> Trait declarations in <code>graphor</code>.</li>
+<li><strong>plugin.</strong> An example plugin implementing <code>graphor</code> traits.</li>
+</ul>
+<h3>Why dynamic libraries?<span class="hx-absolute -hx-mt-20" id="why-dynamic-libraries"></span>
+    <a href="#why-dynamic-libraries" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>In principle, the amount of existing plugins is unbounded, as well as the amount of people working on one at any given point. At least, it is somewhat independent of the amount of people working on <code>graphor</code>. Dynamic libraries as a design decision permits independent authorship without the need for a central body of developers, who would otherwise be a development bottleneck.</p>
+<h3>Where does data live?<span class="hx-absolute -hx-mt-20" id="where-does-data-live"></span>
+    <a href="#where-does-data-live" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>When a plugin is implemented, all of the generic code used in <code>graphor</code> is specialized at the time of compilation. This includes the algorithms that perform graph traversals and the database code that stores the desired features associated with graph vertices.</p>
+<p>So, when a plugin is &rsquo;executed,&rsquo; the core routines of <code>graphor</code> figure out the minimum amount of algorithms that need to be executed to figure out the features requested by a user. Then they are executed, and the data they compute is stored by plugin code into a persistent database file which is later recovered and coalesced by <code>graphor</code>.</p>
+
         </div>
         
     <div class="hx-mt-12 hx-mb-8 hx-block hx-text-xs hx-text-gray-500 ltr:hx-text-right rtl:hx-text-left dark:hx-text-gray-400">Last updated on <time datetime="2025-02-18T21:15:38.000Z">February 18, 2025</time></div>
@@ -414,7 +535,36 @@
 
 <script defer src="/lib/flexsearch/flexsearch.bundle.min.0425860527cc9968f9f049421c7a56b39327d475e2e3a8f550416be3a9134327.js" integrity="sha256-BCWGBSfMmWj58ElCHHpWs5Mn1HXi46j1UEFr46kTQyc="></script>
     <script defer src="/en.search.js" integrity=""></script>
+<script defer src="/lib/mermaid/mermaid.min.0d2b6f2361e7e0ce466a6ed458e03daa5584b42ef6926c3beb62eb64670ca261.js" integrity="sha256-DStvI2Hn4M5Gam7UWOA9qlWEtC72kmw762LrZGcMomE="></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      
+      document.querySelectorAll(".mermaid").forEach(el => {
+        el.dataset.original = el.innerHTML;
+      });
 
+      const theme = document.documentElement.classList.contains("dark") ? "dark" : "default";
+      mermaid.initialize({ startOnLoad: true, theme: theme });
+
+      let timeout;
+      new MutationObserver(() => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          const theme = document.documentElement.classList.contains("dark") ? "dark" : "default";
+          document.querySelectorAll(".mermaid").forEach(el => {
+            
+            el.innerHTML = el.dataset.original;
+            el.removeAttribute("data-processed");
+          });
+          mermaid.initialize({ startOnLoad: true, theme: theme });
+          mermaid.init();
+        }, 150);
+      }).observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["class"]
+      });
+    });
+  </script>
 
   </body>
 </html>
