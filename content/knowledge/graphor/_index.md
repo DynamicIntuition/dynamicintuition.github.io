@@ -4,7 +4,7 @@ title: "Dataset Generation Over Implicit Graphs"
 weight: 10
 math: true
 sidebar:
-  open: true
+  open: false
 ---
 
 Graphor is a set of software containing interfaces for representing [implicit graphs](https://en.wikipedia.org/wiki/Implicit_graph) through specific functional forms and utilities for computing features associated with their vertices for their downstream analysis as datasets.

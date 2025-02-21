@@ -1,7 +1,7 @@
 ---
-linkTitle: Games
-title: "Game Implementations"
-weight: 15
+linkTitle: Hermes
+title: "Textual Strategy Representations"
+weight: 20
 sidebar:
   open: false
 ---
