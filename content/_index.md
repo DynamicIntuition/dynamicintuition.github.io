@@ -34,9 +34,9 @@ layout: hextra-home
     link="/knowledge"
   >}}
   {{< hextra/feature-card
-    title="Studies"
+    title="Reports"
     subtitle="Informal demonstrations which showcase our work in both theory and practice."
-    link="/studies"
+    link="/reports"
   >}}
   {{< hextra/feature-card
     title="People"

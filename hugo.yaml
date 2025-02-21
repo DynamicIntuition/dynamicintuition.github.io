@@ -33,9 +33,9 @@ menu:
       name: Knowledge
       pageRef: /knowledge
       weight: 1
-    - identifier: studies
-      name: Studies
-      pageRef: /studies
+    - identifier: reports
+      name: Reports
+      pageRef: /reports
       weight: 2
     - identifier: people
       name: People

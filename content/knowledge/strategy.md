@@ -8,7 +8,7 @@ In accordance to our research mission, projects are distributed with the objecti
 
 ## Summary
 
-Motivated by the profound differences across strategic situations, we attempt to maximize the number of samples available for testing our methods during studies.
+Motivated by the profound differences across strategic situations, we attempt to maximize the number of samples available for testing our methods during experimentation.
 
 We specifically seek to have standardized access to many provably correct strategies. By focusing on the deterministic case of game strategy, we restrict potential shortcomings in performance to our methods, increasing the statistical efficiency of our sample strategies.
 

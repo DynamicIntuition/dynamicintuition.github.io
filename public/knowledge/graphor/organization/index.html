@@ -50,11 +50,12 @@ Module Diagram
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/knowledge/graphor/organization/" /><meta property="article:section" content="knowledge" />
 
-
+<meta property="article:modified_time" content="2025-02-19T07:21:28-08:00" />
 
   <meta itemprop="name" content="Graphor Software Organization">
   <meta itemprop="description" content="Here we focus on the organization of the Graphor platform across different libraries, binaries, and modules. This is intended as an introduction to the project, not as a reference.
 Module Diagram graph TD; A[graphor repository] B[graphor-traits] C[graphor-algos] D[graphor-cli] E[graphor bin] F[graphor lib] G[graphor py] H[plugin] I[graphor-core] E --&gt; |compiles| F E --&gt; |calls| D D --&gt; |calls| I E --&gt; |ingests| H H --&gt; |implements| B H --&gt; |monomorphizes| C H --&gt; |compiles| F G --&gt; |exposes| I C --&gt; |consumes| B F --&gt; |includes| B F --&gt; |includes| C F --&gt; |includes| I A --&gt; |contains| E F --&gt; |optional| D A --&gt; |contains| F A --&gt; |contains| G I --&gt; |reads / calls| HRemarks Here we will attempt to justify and explain some design decisions in a Q&amp;A format.">
+  <meta itemprop="dateModified" content="2025-02-19T07:21:28-08:00">
   <meta itemprop="wordCount" content="384">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Graphor Software Organization">
@@ -109,12 +110,12 @@ Module Diagram graph TD; A[graphor repository] B[graphor-traits] C[graphor-algos
           >
             <span class="hx-text-center">Knowledge</span>
           </a><a
-            title="Studies"
-            href="/studies"
+            title="Reports"
+            href="/reports"
             
             class="hx-text-sm contrast-more:hx-text-gray-700 contrast-more:dark:hx-text-gray-100 hx-relative -hx-ml-2 hx-hidden hx-whitespace-nowrap hx-p-2 md:hx-inline-block hx-text-gray-600 hover:hx-text-gray-800 dark:hx-text-gray-400 dark:hover:hx-text-gray-200"
           >
-            <span class="hx-text-center">Studies</span>
+            <span class="hx-text-center">Reports</span>
           </a><a
             title="People"
             href="/people"
@@ -275,9 +276,9 @@ Module Diagram graph TD; A[graphor repository] B[graphor-traits] C[graphor-algos
           <li class=""><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/studies/"
+    href="/reports/"
     
-  >Studies
+  >Reports
     </a></li>
       <li class="[word-break:break-word] hx-mt-5 hx-mb-2 hx-px-2 hx-py-1.5 hx-text-sm hx-font-semibold hx-text-gray-900 first:hx-mt-0 dark:hx-text-gray-100">
         <span class="hx-cursor-default">More</span>
@@ -460,7 +461,8 @@ Module Diagram graph TD; A[graphor repository] B[graphor-traits] C[graphor-algos
 <p>So, when a plugin is &rsquo;executed,&rsquo; the core routines of <code>graphor</code> figure out the minimum amount of algorithms that need to be executed to figure out the features requested by a user. Then they are executed, and the data they compute is stored by plugin code into a persistent database file which is later recovered and coalesced by <code>graphor</code>.</p>
 
         </div>
-        <div class="hx-mt-16"></div>
+        
+    <div class="hx-mt-12 hx-mb-8 hx-block hx-text-xs hx-text-gray-500 ltr:hx-text-right rtl:hx-text-left dark:hx-text-gray-400">Last updated on <time datetime="2025-02-19T07:21:28.000Z">February 19, 2025</time></div>
         
         
       </main>

@@ -1,6 +1,6 @@
 ---
-linkTitle: Studies
-title: Studies
+linkTitle:
+title: Reports
 cascade:
   type: blog
 ---
