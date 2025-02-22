@@ -148,5 +148,5 @@ Establishing an approximation of optimal policy in the form of a Markov process 
 The following are left as potential avenues of analysis relating to this model family.
 
 * Smoothing techniques, and an analysis of their benefit in the context of optimal policy.
-* Non-interpretability $n$-gram model successors; in particular transformer attention.
+* Non-interpretability of $n$-gram model successors; in particular transformer attention.
 * Skip-gram models as an extension of this family.
