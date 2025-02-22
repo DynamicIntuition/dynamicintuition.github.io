@@ -135,9 +135,9 @@ In many traditional definitions of a policy $\pi$, there may exist elements $s^\
 
 ## Inference
 
-When at a state $s \in S$, a human player can consider the set of next possible states $t(s)$ (where $t : S \to \mathcal{P}(S)$ is a transition function). Ideally, they would perform combinatorial optimization across all elements $s^\prime \in t(s)$ under the objective of maximizing the probability that their action is observed across all abstract state space transitions $S^{(\alpha)}$. This is tantamount to combinatorial maximum likelihood estimation.
+When at a state $s \in S$, a human player can consider the set of next possible states $t(s)$ (where $t : S \to \mathcal{P}(S)$ is a transition function). Ideally, they would perform combinatorial optimization across all elements $s^\prime \in t(s)$ under the objective of maximizing the probability that their action is observed across all abstract state space transitions $S^{(\alpha)}$. Essentially, this is maximum likelihood estimation.
 
-While this is possible to an extent due to the simplicity of the abstractions under consideration (which map onto small sets of classes, reducing maximization objectives during MLE), the true value of the model is in the subjective analysis of each $\Pi^{(\alpha)}$. Also, quantitative techniques (such as finding the static distribution and convergence rate of these matrices) may illustrate interpretable patterns in the dynamics of $\pi$, depending on the choice of $\langle \phi^{(\alpha)} \rangle$.
+While this is possible to an extent due to the simplicity of the abstractions in consideration (which map onto small sets of classes, reducing maximization objectives during MLE), the true value of the model is in the subjective analysis of each $\Pi^{(\alpha)}$. Also, quantitative techniques (such as finding the static distribution and convergence rate of these matrices) may illustrate interpretable patterns in the dynamics of $\pi$, depending on the choice of $\langle \phi^{(\alpha)} \rangle$.
 
 ## Remarks
 
