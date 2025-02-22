@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/knowledge/strategy/</loc>
-    <lastmod>2025-02-21T05:09:13-08:00</lastmod>
+    <lastmod>2025-02-21T15:56:26-08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/knowledge/graphor/</loc>
     <lastmod>2025-02-21T05:09:13-08:00</lastmod>
@@ -25,13 +25,16 @@
     <loc>http://localhost:1313/knowledge/</loc>
     <lastmod>2025-02-21T05:09:13-08:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/reports/markov_models/</loc>
+  </url><url>
     <loc>http://localhost:1313/people/</loc>
     <lastmod>2025-02-19T07:21:28-08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-02-19T07:21:28-08:00</lastmod>
+    <lastmod>2025-02-21T15:56:26-08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/reports/</loc>
+    <lastmod>2025-02-21T15:56:26-08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
   </url>
