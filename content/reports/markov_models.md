@@ -36,9 +36,9 @@ $n$-gram models were developed as a rudimentary statistical model of language. B
 \end{equation}
 \]
 
-straightforward [maximum likelihood estimation](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation) shows that this probability is the proportion of times that the sequence $\langle w_{t-n}, \\, \ldots, w_t \rangle$ appears before $w_{t + 1}$ in observations. This is result is interpretable as frequentist inference, making the probability measure intuitive.
+straightforward [maximum likelihood estimation](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation) shows that this probability is the proportion of times that the sequence $\langle w_{t-n}, \\, \ldots, w_t \rangle$ appears before $w_{t + 1}$ in observations. This is can be seen as frequentist inference, making the probability measure intuitive.
 
-When applied to a set of symbols (words) $S$, such a model implies a Markov chain over the product $S^n = S \times \cdots \times S$. It follows that the chain's [stochastic matrix](https://en.wikipedia.org/wiki/Stochastic_matrix) $\Pi$ is an element of $\mathbb{R}^{k \times k}$ with $k = |S|^n$, meaning that the number of learnable parameters grows exponentially with the order of the model for a fixed $S$.
+When applied to a set of symbols (words) $S$, such a model implies a Markov chain over the product $S^n = S \times \cdots \times S$. It follows that the chain's [stochastic matrix](https://en.wikipedia.org/wiki/Stochastic_matrix) $\Pi$ is an element of $\mathbb{R}^{k \times k^n}$ with $k = |S|$, meaning that the number of learnable parameters grows exponentially with the order of the model for a fixed $S$.
 
 As a result of upholding the Markov property, $n$-gram models are stationary, meaning that the probabilities they assign to a sequence are invariant with respect to shifts in the time index. This flaw makes them incompatible with natural language to any useful extent.
 
