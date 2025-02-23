@@ -32,7 +32,7 @@ $n$-gram models were developed as a rudimentary statistical model of language. B
 \[
 \begin{equation}
   P(w_1, \, \ldots, w_{t + 1}) =
-  P(w_1, \dots, w_{t - n - 1}) \prod_{i = 0}^{n - 1} P(w_{t+1} \mid w_{t-n}, \dots, w_t)
+  P(w_1, \dots, w_{t - n - 1}) \prod_{i = 0}^{n - 1} P(w_{t+1} \mid w_{t-n}, \dots, w_t),
 \end{equation}
 \]
 
