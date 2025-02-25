@@ -150,3 +150,7 @@ The following are left as potential avenues of analysis relating to the model fa
 * Smoothing techniques, and an analysis of their benefit in the context of optimal policy.
 * Non-interpretability of $n$-gram model successors; in particular transformer attention.
 * Skip-gram models as an extension of this family.
+
+## Credits
+
+Thank you to my good friend Humberto Gutierrez for spending late nights discussing the concept of policy abstraction with me, and helping me organize many ideas about policies over continuous abstractions.
